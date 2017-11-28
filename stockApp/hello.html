@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"post",
+					url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getLuntanList2",
+					dataType:'jsonp',
+					data:{
+						pageSize:10,
+						page:2,
+						daima:'l'
+					},
+					jsonp:'callback',
+					success:function(res){
+						console.log(res);
+					}
+				});
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

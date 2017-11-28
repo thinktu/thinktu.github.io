@@ -1,0 +1,200 @@
+/*
+ * less
+ * author:hoyuet
+ * date:2017-11-8
+ */
+@headerbg:#4167B2;
+@wihte:#fff;
+@test:red;
+@bg:#E7E7E7;
+.border-bottom10px(){border-bottom: 0.1rem solid #E7E7E7;}
+.border-bottom2px(){border-bottom: 0.02rem solid #E7E7E7;}
+*{margin: 0;padding: 0;}
+html{background: @bg;}
+.container-wrap{
+    width: 7.5rem;height: auto;background: @bg;margin-bottom: 1.1rem;
+    .header{
+        display: flex;position: fixed;top: 0;left: 0;
+        width: 7.5rem;height: 0.88rem;line-height: 0.88rem;font-size: 0.29rem;
+        background:@headerbg;
+        >div{
+            text-align: center;
+            color: @wihte;
+            &.header-l{
+                flex-basis: 1rem;
+                flex-grow: 0;
+                flex-shrink: 0;
+                
+            }
+            &.header-c{
+                flex: auto;
+                
+            }
+            &.header-r{
+                flex-basis: 1rem;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+        }
+    }
+    .main{
+        width: 7.5rem;height: auto;min-height: 11.4rem;margin-top: 0.88rem;
+        section{
+           
+            width: 7.5rem;height: auto;
+            box-sizing: border-box;
+            
+            &.content{
+                display: flex;
+                padding: 0.23rem;
+                .border-bottom10px;
+                background: @wihte;
+                .user{
+                    
+                    flex-basis: 1rem;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    img{width: 0.8rem;height: 0.8rem;}
+                }
+                .msg{
+                    height: 5.25rem;
+                    flex: 1;
+                    article{
+                        width: 5.72rem;
+                        .msg-header{
+                           width: 100%;height: 0.34rem;line-height: 0.34rem;font-size: 0.29rem;color: #576B95;display: flex;
+                           .msg-user{
+                               flex: 1;text-align: left;
+                           }
+                           .msg-del{
+                               flex: 1;text-align: right;
+                           }
+                        }
+                        .msg-main{
+                             width: 100%;height: 4rem;
+                             .msg-content{
+                                 width: 100%;height:1.35rem;overflow:hidden;line-height: 0.34rem;
+                                 font-size: 0.29rem;
+                             }
+                             .msg-img{
+                                 width: 100%;padding-top: 0.35rem;display: flex;
+                                 img{
+                                     width: 2.4rem;height: 2.4rem;margin-right: 0.12rem;
+                                     
+                                 }
+                             }
+                        }
+                        .msg-footer{
+                             display:flex; width: 100%;height: 1rem;line-height: 1rem;
+                             font-size: 0.24rem;
+                             .time{
+                                 flex: 1;text-align: left;
+                             }
+                             .count{
+                                 flex: 1;text-align: right;
+                                 i{
+                                     width: 0.4rem;height: 0.36rem;font-size: 0.36rem;margin: 0.1rem;
+                                 }
+                             }
+                        }
+                    }
+                }
+            }
+            &.contact-list{
+                display: flex;
+                padding: 0.23rem;
+                background: @wihte;
+                .border-bottom2px;
+                .user{
+                    
+                    flex-basis: 1rem;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    text-align: center;
+                    img{width: 0.6rem;height: 0.6rem;}
+                }
+                .msg{
+                    height: auto;
+                    flex: 1;
+                    article{
+                        width: 5.72rem;
+                        .msg-header{
+                           width: 100%;height: 0.34rem;line-height: 0.34rem;font-size: 0.26rem;color: #576B95;display: flex;
+                           .msg-user{
+                               flex: 1;text-align: left;
+                           }
+                           .msg-del{
+                               flex: 1;text-align: right;
+                           }
+                        }
+                        .msg-main{
+                             width: 100%;height: auto;
+                             .msg-content{
+                                 width: 100%;height: auto;overflow:hidden;line-height: 0.34rem;
+                                 font-size: 0.25rem;
+                             }
+                            
+                        }
+                        .msg-footer{
+                             display:flex; width: 100%;height: 0.4rem;line-height: 0.4rem;
+                             font-size: 0.18rem;color: #999;
+                             .time{
+                                 flex: 1;text-align: left;
+                             }
+                             .count{
+                                 flex: 1;text-align: right;
+                                 i{
+                                     width: 0.26rem;height: 0.26rem;font-size: 0.26rem;margin: 0.1rem;
+                                 }
+                             }
+                        }
+                        .contact-list-info{
+                            width: 5.72rem;padding: 0.2rem 0.1rem;background: #EEEEEE;
+                            .info-item{
+                                font-size: 0.24rem;
+                                .user1,.user2{
+                                    color: #576B95;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    .footer{
+        position: fixed;left: 0;bottom: 0;
+        width: 7.5rem;height: 0.88rem;line-height: 0.88rem;background: @wihte;
+        .content-send{
+            i{
+                position: absolute;
+                left: 0.57rem;top: 0.25rem;
+                width: 0.3rem;height: 0.3rem;line-height: 0.3rem;text-align: center;
+                font-size: 0.24rem;
+                z-index: -2;
+            }
+            .send-info{
+                display: inline-block;
+                width: 5rem;
+                height: 0.56rem;
+                margin: 0 0.15rem;
+                padding-left: 0.86rem;
+                border:0.01rem solid #EAEAEA;
+                border-radius: 0.28rem;
+                font-size: 0.24rem;
+                color: #eaeaea;
+                background: url(../font-awesome-4.7.0/fonts/fontawesome-webfont.svg) no-repeat;
+                
+            }
+            .send-btn{
+                display: inline-block;
+                width: 1rem;
+                height: 0.56rem;
+                background: #4167B2;
+                border-radius: 0.1rem;
+                font-size: 0.24rem;
+            }
+        }
+    }
+}

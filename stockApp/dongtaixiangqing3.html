@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/less" href="./css/xiangqing03.less" />
+		<!-- Load Babel -->
+	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+	    <!-- Your custom script here -->
+	    <script src="js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+
+	    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+				$.ajax({
+					type:"get",
+					url:"dongtaixiangqing.json",
+					success:function(res){
+						console.log(res)
+						var str=`
+							<div class="user">
+								<img src="${res.content.url}" alt="" />
+							</div>
+							<div class="msg">
+								<article>
+									<header class="msg-header">
+										<div class="msg-user">用户${res.content.user.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')}</div>
+									</header>
+									<main class="msg-main">
+										<div class="msg-content">
+											${res.content.content}
+										</div>
+										<div class="msg-img">
+											<img src="${res.content.imgs[0]}" alt="" />
+											<img src="${res.content.imgs[1]}" alt="" />
+										</div>
+									</main>
+									<footer class="msg-footer">
+										<div class="time">
+											<span>${res.content.time}</span>
+										</div>
+										<div class="count">
+											<span class="count-love">
+												<i class="fa fa-heart"></i>${res.content.favorate}
+											</span>
+											<span class="count-comment">
+												<i class="fa fa-commenting-o"></i>${res.content.count}
+											</span>
+										</div>
+										
+									</footer>
+								</article>
+							</div>
+						`;
+						var section=$("<section class='content'>"+str+"</section>");
+						var countComment=section.find('.count-comment i');
+						countComment.click(function(){
+							$('.footer .send-info').focus().css('color','#333');
+							$('.footer .send-btn').click(function(){
+								var val=$('.footer .send-info').val();
+								console.log(val)
+							})
+						})
+						$('.main').append(section);
+					
+					
+						var contactLists=res['contact-list'];
+						for(var i=0;i<contactLists.length;i++){
+							var str2=`
+								<div class="user">
+									<img src="${contactLists[i].url}" alt="" />
+								</div>
+								<div class="msg">
+									<article>
+										<header class="msg-header">
+											<div class="msg-user">用户${contactLists[i].msg.user.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')}</div>
+											<div class="msg-del"><i class="fa fa-trash-o"></i></div>
+										</header>
+										<main class="msg-main">
+											<div class="msg-content">
+												${contactLists[i].msg['msg-content']}
+											</div>
+										</main>
+										<footer class="msg-footer">
+											<div class="time">
+												<span>${contactLists[i].msg.time}</span>
+											</div>
+											<div class="count">
+												<span class="count-comment">
+													<i class="fa fa-commenting-o"></i>
+												</span>
+											</div>
+											
+										</footer>
+									</article>
+									<article>
+										<ul class="contact-list-info">
+											
+										</ul>
+									</article>
+								</div>
+							`;
+							
+							var section2=$("<section class='contact-list'>"+str2+"</section>");
+							var ul=section2.find('.contact-list-info');
+							var info1=contactLists[i]['contact-list-info']
+//							console.log(info1)
+							for(var j=0;j<info1.length;j++){
+								var str3=`
+									
+										<span class="user1">${info1[j].user1}</span>
+										回复
+										<span class="user2">${info1[j].user2}</span>：${info1[j].info}
+									
+								`;
+								var li=$('<li class="info-item">'+str3+'</li>');
+								ul.append(li);
+							}
+							var countComment2=section2.find('.count-comment i');
+							countComment2.click(function(){
+								$('.footer .send-info').focus().css('color','#333');
+								$('.footer .send-btn').click(function(){
+									var val=$('.footer .send-info').val();
+									console.log(val)
+								})
+							});
+//							console.log(countComment2)
+//							for(var c=0;c<countComment2.length;c++){
+//								countComment2[0].click(function(){console.log(1)
+//									$('.footer .send-info').focus().css('color','#333');
+//									$('.footer .send-btn').click(function(){
+//										var val=$('.footer .send-info').val();
+//										console.log(val)
+//									})
+//								})
+//							}
+							
+							$('.main').append(section2);
+						}
+					}	
+				});
+	    	})
+	    </script>
+	</head>
+	<body>
+		<div class="container-wrap">
+			<header class="header">
+				<div class="header-l"><i class="fa fa-chevron-left"></i></div>
+				<div class="header-c">动态详情</div>
+				<div class="header-r"><i></i></div>
+			</header>
+			<main class="main">
+			</main>
+			<footer class="footer">
+				<form class="content-send">
+					<i class="fa fa-pencil"></i>
+					<input type="text" class="send-info" placeholder="请输入您的观点" />
+					<button type="button" class="send-btn">发布</button>
+				</form>
+			</footer>
+		</div>
+		
+	    <script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
