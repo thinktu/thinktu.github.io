@@ -1,0 +1,11 @@
+console.log(1);
+$(function(){
+	$.ajax({
+		type:"post",
+		url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getLuntanList?pageSize=10&page=1&daima=USDX",
+		async:true,
+		success:function(res){
+			console.log(res);
+		}
+	});
+});

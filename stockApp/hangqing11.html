@@ -9,12 +9,47 @@
 	    <title></title>
 	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
-		<link rel="stylesheet" type="text/less" href="./css/xiangqing01.less" />
+		<link rel="stylesheet" type="text/less" href="./css/hangqing.less" />
 		<!-- Load Babel -->
 	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
 	    <!-- Your custom script here -->
+	    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 	    <script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
 	    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	    <!--<script src="js/hangqing.js" type="text/javascript" charset="utf-8"></script>-->
+	    <script src="js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+				$.ajax({
+					type:"post",
+					url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getLuntanList?pageSize=10&page=1&daima=USDX",
+					async:true,
+					dataType:'jsonp',
+					success:function(res){
+						console.log(res);
+						if(res.resultCode==="1"){
+							var data=res.data,list=data.list,listLen=list.length;
+							for(var i=0;i<listLen;i++){
+								var contactList=list[i];
+								var avatar=contactList.avatar,id=contactList.id,title=contactList.title,time=contactList.time,create_time=contactList.create_time,nick=contactList.nick,publish=contactList.publish,pinglun=contactList.pinglun;
+								
+								var user=`
+									<div class="user">
+										<img src=${avatar} alt="" />
+									</div>
+								`;
+								
+								
+								
+								var section=$('<section class="contact-list"></section>');
+								
+							}
+						
+						}
+					}
+				});
+			});
+	    </script>
 	</head>
 	<body>
 		<div class="container-wrap">
@@ -38,41 +73,6 @@
 						<i class="fa fa-line-chart"></i>
 					</div>	
 				</div>
-				<section class="content">
-					<div class="user">
-						<img src="user.png" alt="" />
-					</div>
-					<div class="msg">
-						<article>
-							<header class="msg-header">
-								<div class="msg-user">用户130***17017</div>
-							</header>
-							<main class="msg-main">
-								<div class="msg-content">
-									美国总统特朗普对朝鲜的"怒火打击"、及朝鲜认真考虑“围攻关岛”的言论引发波动。瑞郎日内表现尤其强势，VIX恐慌指数亦触及一个月以来新高。
-								</div>
-								<div class="msg-img">
-									<img src="info.png" alt="" />
-									<img src="info.png" alt="" />
-								</div>
-							</main>
-							<footer class="msg-footer">
-								<div class="time">
-									<span>1小时前</span>
-								</div>
-								<div class="count">
-									<span class="count-love">
-										<i class="fa fa-heart"></i>1234
-									</span>
-									<span class="count-comment">
-										<i class="fa fa-commenting-o"></i>9034
-									</span>
-								</div>
-								
-							</footer>
-						</article>
-					</div>
-				</section>
 				<section class="contact-list">
 					<div class="user">
 						<img src="user.png" alt="" />

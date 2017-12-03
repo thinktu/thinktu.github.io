@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/less" href="./css/hangqing.less" />
+		<!-- Load Babel -->
+	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+	    <!-- Your custom script here -->
+	    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	    <!--<script src="js/hangqing.js" type="text/javascript" charset="utf-8"></script>-->
+	    <script src="js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+				$.ajax({
+					type:"post",
+					url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getLuntanList?pageSize=10&page=1&daima=USDX",
+					async:true,
+					dataType:'jsonp',
+					success:function(res){
+						console.log(res);
+						if(res.resultCode==="1"){
+							var data=res.data,list=data.list,listLen=list.length;
+							for(var i=0;i<listLen;i++){
+								var contactList=list[i];
+								var avatar=contactList.avatar,id=contactList.id,title=contactList.title,time=contactList.time,create_time=contactList.create_time,nick=contactList.nick,publish=contactList.publish,pinglun=contactList.pinglun;
+								
+								var str=`
+									<div class="user">
+										<img src=${avatar} alt="" />
+									</div>
+									<div class="msg">
+										<article>
+											<header class="msg-header">
+												<div class="msg-user">${nick}</div>
+												<div class="msg-del"><i class="fa fa-trash-o"></i></div>
+											</header>
+											<main class="msg-main">
+												<div class="msg-content">
+													${title}
+												</div>
+											</main>
+											<footer class="msg-footer">
+												<div class="time">
+													<span>${create_time}</span>
+												</div>
+												<div class="count">
+													<span class="count-comment">
+														<i class="fa fa-commenting-o"></i>
+													</span>
+												</div>
+												
+											</footer>
+										</article>
+										<article>
+											<ul class="contact-list-info">
+												
+											</ul>
+										</article>
+									</div>
+								`;
+								var section=$('<section class="contact-list">'+str+'</section>');
+								var countComment=section.find('.count-comment i');
+								countComment.click(function(){
+									$('.footer .send-info').focus().css('color','#333');
+									$('.footer .send-btn').click(function(){
+										//这里要判断用户是否登录
+										var val=$('.footer .send-info').val();
+										//创建li评论列表
+										
+										
+									})
+								})
+								$('.main').append(section);
+								for(var j=0;j<pinglun.length;j++){
+									var strLi=`
+										<li class="info-item">
+											<span class="user2">${pinglun[j].nick}</span>
+											回复
+											<span class="user1">${pinglun[j].receiveNick}</span>：${pinglun[j].content}
+										</li>
+									`;
+									var Li=$('<li>'+strLi+'</li>');
+									section.find('ul.contact-list-info').append(Li);
+								}
+							}
+						
+						}
+					}
+				});
+				$.ajax({
+					type:"post",
+					url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getZhangDieLv?daima=USDX",
+					async:true,
+					dataType:'jsonp',
+					success:function(res){
+						console.log(res);
+						if(res.resultCode==='1'){
+							var data=res.data,dieLv=data.dieLv,zhangLv=data.zhangLv;
+							$('.up').width(zhangLv+'%');
+							$('.down').width(dieLv+'%');
+						}
+					}
+					
+				});
+				$('.bar-up span').click(function(){
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addZhangLv?daima=USDX",
+						async:true,
+						dataType:'jsonp',
+						success:function(res){
+							console.log(res);
+//							if(res.resultCode==='1'){
+//								var data=res.data,dieLv=data.dieLv,zhangLv=data.zhangLv;
+//								$('.up').width(zhangLv+'%');
+//								$('.down').width(dieLv+'%');
+//							}
+						}
+					});
+				});
+				$('.bar-down span').click(function(){
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addDieLv?daima=USDX",
+						async:true,
+						dataType:'jsonp',
+						
+						success:function(res){
+							console.log(res);
+//							if(res.resultCode==='1'){
+//								var data=res.data,dieLv=data.dieLv,zhangLv=data.zhangLv;
+//								$('.up').width(zhangLv+'%');
+//								$('.down').width(dieLv+'%');
+//							}
+						}
+					});
+				});
+				
+				//添加评论
+				$('.footer .send-info').focus().css('color','#333');
+				$('.footer .send-btn').click(function(){
+					//这里要判断用户是否登录
+					var val=$('.footer .send-info').val();
+					//创建li评论列表
+					
+					
+				})
+				
+			});
+	    </script>
+	</head>
+	<body>
+		<div class="container-wrap">
+			<header class="header">
+				<div class="header-l"><i class="fa fa-chevron-left"></i></div>
+				<div class="header-c">黄金</div>
+				<div class="header-r"><i></i></div>
+			</header>
+			<main class="main">
+				<div class="bar">
+					<span class="up"></span>
+					<span class="down"></span>
+				</div>
+				<div class="bar-content">
+					<div class="bar-up">
+						<span>看涨</span>
+						<i class="fa fa-line-chart"></i>
+					</div>
+					<div class="bar-down">
+						<span>看跌</span>
+						<i class="fa fa-line-chart"></i>
+					</div>	
+				</div>
+				
+				
+			</main>
+			<footer class="footer">
+				<form class="content-send">
+					<i class="fa fa-pencil"></i>
+					<input type="text" class="send-info" placeholder="请输入您的观点" />
+					<button type="button" class="send-btn">发布</button>
+				</form>
+			</footer>
+		</div>
+	</body>
+</html>
