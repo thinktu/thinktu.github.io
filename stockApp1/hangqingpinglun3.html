@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/less" href="./css/hangqingpinglun3.less" />
+		<!-- Load Babel -->
+	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+	    <!-- Your custom script here -->
+	    <script src="js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+	    
+	    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"data.json",
+					success:function(data){
+						console.log(data)
+						var up=data.up,down=data.down,lists=data.lists;
+						$('.up').width(up/(up+down)*100+'%');
+						$('.down').width(down/(up+down)*100+'%');
+						var listLen=lists.length;
+						for(var i=0;i<listLen;i++){
+							var str=`
+							<div class="user">
+								<img src=${lists[i].url} alt="" />
+							</div>
+							<div class="msg">
+								<article>
+									<header class="msg-header">
+										<div class="msg-user">用户${lists[i].user}</div>
+										<div class="msg-del"><i class="fa fa-trash-o"></i></div>
+									</header>
+									<main class="msg-main">
+										<div class="msg-content">
+											${lists[i].content}
+										</div>
+										<div class="msg-img">
+											<img src=${lists[i].imgs[0]} alt="" />
+											<img src=${lists[i].imgs[1]} alt="" />
+										</div>
+									</main>
+									<footer class="msg-footer">
+										<div class="time">
+											<span>${lists[i].time}</span>
+										</div>
+										<div class="count">
+											<span class="count-love" onclick="1">
+												<i class="fa fa-heart-o"></i><span>${lists[i].favorate}</span>
+											</span>
+											<span class="count-comment">
+												<i class="fa fa-commenting-o"></i><span>${lists[i].count}</span>
+											</span>
+										</div>
+										
+									</footer>
+								</article>
+							</div>`;
+							var section=$('<section class="content">'+str+'</section>');
+							$('.main').append(section);
+						}
+					}
+				});
+				$('.bar-up span').click(function(){
+					$.ajax({
+						type:"get",
+						url:"data.json",
+						success:function(data){
+							console.log(data)
+							var up=data.up+10,down=data.down;
+							$('.up').width(up/(up+down)*100+'%');
+							$('.down').width(down/(up+down)*100+'%');
+							
+						}
+					});
+				});
+				$('.bar-down span').click(function(){
+					$.ajax({
+						type:"get",
+						url:"data.json",
+						success:function(data){
+							console.log(data)
+							var up=data.up,down=data.down+10;
+							$('.up').width(up/(up+down)*100+'%');
+							$('.down').width(down/(up+down)*100+'%');
+							
+						}
+					});
+				});
+				function addFavorate(obj){
+					$(obj).find('span').html($(obj).find('span').html++);
+				}
+			});
+	    </script>
+	
+	</head>
+	<body>
+		<div class="container-wrap">
+			<header class="header">
+				<div class="header-l"><i class="fa fa-bell-o"></i></div>
+				<div class="header-c">动态</div>
+				<div class="header-r"><i class="fa fa-paper-plane-o"></i></div>
+			</header>
+			<main class="main">
+				<div class="bar">
+					<span class="up"></span>
+					<span class="down"></span>
+				</div>
+				<div class="bar-content">
+					<div class="bar-up">
+						<span>看涨</span>
+						<i class="fa fa-line-chart"></i>
+					</div>
+					<div class="bar-down">
+						<span>看跌</span>
+						<i class="fa fa-line-chart"></i>
+					</div>	
+				</div>
+				
+			</main>
+			<footer class="footer">
+				<ul>
+					<li><i class="fa fa-home"></i></li>
+					<li><i class="fa fa-line-chart"></i></li>
+					<li class="active"><i class="fa fa-file-text"></i></li>
+					<li><i class="fa fa-user-o"></i></li>
+				</ul>
+			</footer>
+		</div>
+		
+		<script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
