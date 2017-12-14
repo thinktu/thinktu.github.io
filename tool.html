@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>ren</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/less" href="less/public.less"/>
+		<link rel="stylesheet" type="text/less" href="less/tool.less"/>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<header id="header">
+			<div class="container navbar-fixed-top">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+					        </button>
+					        <a class="navbar-brand" href="#"></a>
+					    </div>
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					     	<ul class="nav navbar-nav">
+						        <li><a href="index.html">首页 </a></li>
+						        <li class="dropdown">
+						          	<a href="blog.html" style="background: none;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">博客 <span class="caret"></span></a>
+						          	<ul class="dropdown-menu" style="background: none;">
+							            <li><a href="#">前端</a></li>
+							            <li role="separator" class="divider"></li>
+							            <li><a href="#">后端</a></li>
+							            <li role="separator" class="divider"></li>
+							            <li><a href="#">其他相关</a></li>
+						          	</ul>
+						        </li>
+						        <li><a href="tool.html">常用工具 </a></li>
+						        <li><a href="download.html">资源下载 </a></li>
+						        <li><a href="contact.html">留言 </a></li>
+					      	</ul>
+						    
+						    <ul class="nav navbar-nav navbar-right">
+						        <li><a href="login.html">登录</a></li>
+						    </ul>
+						    <form class="navbar-form navbar-right">
+						        <!--<div class="form-group">
+						          <input type="text" class="form-control" placeholder="Search">
+						        </div>-->
+						        <button type="button" class="btn btn-default">搜索</button>
+						    </form>
+					    </div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</div>
+			
+		</header>
+		<main id="main">
+			<div class="banner">
+				<div class="banner-bg"></div>
+				<div class="banner-content">
+					<div class="banner-content-title">
+						工具库
+					</div>
+					<div class="banner-content-info">
+						简单、直观、强悍的工具仓库，让代码开发更迅速。
+					</div>
+				</div>
+			</div>		
+			<div class="container" id="tool">
+				<div class="row">
+					<!--<div class="tool-box-content col-lg-10">
+						<div class="tool-box">
+							<div class="tool-box-title">
+								<strong>代码辅助</strong>
+							</div>
+							<ul>
+								<li ><a href="#">JS &amp; CSS 压缩混淆 格式</a></li>
+								<li ><a href="#">JSON格式化</a></li>
+								<li ><a href="#">Unicode编码转换</a></li>
+								<li ><a href="#">MD5加密</a></li>
+								<li ><a href="#">BASE64加解密</a></li>
+								<li ><a href="#">px单位转em单位</a></li>
+								<li ><a href="#">CSS3前缀生成器</a></li>
+							</ul>
+						</div>
+						<div class="tool-box">
+							<div class="tool-box-title">
+								<strong>对照表</strong>
+							</div>
+							<ul>
+								<li ><a href="#">HTML特殊符号对照表</a></li>
+								<li ><a href="#">ASCII对照表</a></li>
+								<li ><a href="#">HTTP Content-type</a></li>
+								<li ><a href="#">HTTP状态码</a></li>
+								<li ><a href="#">HTML5 & CSS3 支持情况</a></li>
+								<li ><a href="#">不同终端占有率和尺寸</a></li>
+							</ul>
+						</div>
+						<div class="tool-box">
+							<div class="tool-box-title">
+								<strong>字体图标</strong>
+							</div>
+							<ul>
+								<li ><a href="#">Icomoon</a></li>
+								<li ><a href="#">阿里巴巴矢量图标库</a></li>
+								<li ><a href="#">FontAwesome官网</a></li>
+								<li ><a href="#">FontAwesome国内中文</a></li>
+								<li ><a href="#">Fontello</a></li>
+								<li ><a href="#">Pictonic</a></li>
+							</ul>
+						</div>
+						<div class="tool-box">
+							<div class="tool-box-title">
+								<strong>API文档</strong>
+							</div>
+							<ul>
+								<li ><a href="#">HTML5中文参考手册</a></li>
+								<li ><a href="#">CSS2 &amp; CSS3 中文参考</a></li>
+								<li ><a href="#">JavaScript 中文手册</a></li>
+								<li ><a href="#">jQuery 1.10 中文参考手册</a></li>
+								<li ><a href="#">jQuery 1.12 中文参考手册</a></li>
+								<li ><a href="#">Zepto.js 中文手册</a></li>
+								<li ><a href="#">Node.js 中文手册</a></li>
+								<li ><a href="#">Bootstrap2 中文手册</a></li>
+								<li ><a href="#">Bootstrap3 中文手册</a></li>
+								<li ><a href="#">Bootstrap4 中文文档</a></li>
+								<li ><a href="#">Bootstrap 编码规范</a></li>
+								<li ><a href="#">Less 中文文档</a></li>
+								<li ><a href="#">Sea.js 中文文档</a></li>
+								<li ><a href="#">百度Tangram 文档</a></li>
+							</ul>
+						</div>
+						<div class="tool-box">
+							<div class="tool-box-title">
+								<strong>静态文件库</strong>
+							</div>
+							<ul>
+								<li ><a href="#">BootCDN</a></li>
+								<li ><a href="#">前端公共库CDN加速</a></li>
+								<li ><a href="#">百度静态资源公共库</a></li>
+								<li ><a href="#">360网站卫士常用前端公共库</a></li>
+								<li ><a href="#">CDNJS</a></li>
+								<li ><a href="#">新浪云计算CDN公共库</a></li>
+								<li ><a href="#">微软 ASP.net CDN</a></li>
+								<li ><a href="#">CDNJS.NET</a></li>
+							</ul>
+						</div>
+					</div>-->
+<head>
+    <title>开发者工具/Json格式化/px转rem/编码/解码/二进制 - 程序员在线工具</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="px转rem | 本机IP查询 | Json格式化 | UrlEncode | HtmlEncode | Md5加密 | Base64 | Guid | 半角全角 | 时间戳 | 字符串长度 | Json转实体 | 二维码生成 | 条形码生成 | 二进制 | 编码 | 解码 | 编程工具 | 在线工具" />
+    <meta name="description" content="px转rem、本机IP查询、Json格式化、UrlEncode、HtmlEncode、Md5加密、Base64、Guid、半角全角、时间戳、字符串长度、Json转实体、二维码生成、条形码生成、二进制、编码、解码、编程工具、在线工具">
+    <meta name="baidu-site-verification" content="eUQWd24Yo1" />
+    <meta name="360-site-verification" content="53fcc345153d702565052ed806227611" />
+    <link rel="icon" href="/images/monkey.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="http://ofmonkey.com/Content/themes/blueskin/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="http://ofmonkey.com/Content/themes/blueskin/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://ofmonkey.com/Content/themes/blueskin/css/weather-icons.min.css" rel="stylesheet" />
+    <link id="beyond-link" href="http://ofmonkey.com/Content/themes/blueskin/css/beyond.min.css" rel="stylesheet" />
+    <link href="http://ofmonkey.com/Content/themes/blueskin/css/demo.min.css" rel="stylesheet" />
+    <link href="http://ofmonkey.com/Content/themes/blueskin/css/typicons.min.css" rel="stylesheet" />
+    <link href="http://ofmonkey.com/Content/themes/blueskin/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <link href="http://ofmonkey.com/Assets/css/simple.css?v=2017071604" rel="stylesheet" />
+    
+    <script src="http://ofmonkey.com/Content/themes/blueskin/js/jquery-2.0.3.min.js"></script>
+    <script src="http://ofmonkey.com/Content/themes/blueskin/js/bootstrap.min.js"></script>
+    <script src="http://ofmonkey.com/Content/themes/blueskin/js/skins.min.js"></script>
+    <script src="http://ofmonkey.com/Assets/js/vue.min.js"></script>
+    <script src="http://ofmonkey.com/Assets/tool/simple.js?v=2017071604"></script>
+    
+    <script>
+        $(function () {
+            $('.funs-container li').hover(function () {
+                $(this).addClass('funs-hover');
+                $(this).find('.funs-title').addClass('high-light');
+                $(this).find('.funs-button').removeClass('btn-default').addClass('btn-warning');
+            }, function () {
+                $(this).removeClass('funs-hover');
+                $(this).find('.funs-title').removeClass('high-light');
+                $(this).find('.funs-button').removeClass('btn-warning').addClass('btn-default');
+            });
+        });
+    </script>
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?da399ab96784e6075d748a4f4245f434";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+</head>
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <div class="page-sidebar" id="sidebar">
+                <ul class="nav sidebar-menu nav-pill">
+                    <li>
+                        <a href="http://ofmonkey.com">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 所有功能 </span>
+                        </a>
+                    </li>
+                    <li data-flag="query">
+                        <a href="http://ofmonkey.com/query/local">
+                            <i class="menu-icon glyphicon glyphicon-search"></i>
+                            <span class="menu-text"> 数据查询 </span>
+                        </a>
+                    </li>
+                    <li data-flag="front">
+                        <a href="http://ofmonkey.com/front/color">
+                            <i class="menu-icon glyphicon glyphicon-th"></i>
+                            <span class="menu-text"> 前端工具 </span>
+                        </a>
+                    </li>
+                    <li data-flag="entity">
+                        <a href="http://ofmonkey.com/entity/json">
+                            <i class="menu-icon glyphicon glyphicon-fire"></i>
+                            <span class="menu-text"> 实体生成 </span>
+                        </a>
+                    </li>
+                    <li data-flag="encode">
+                        <a href="http://ofmonkey.com/encode/url">
+                            <i class="menu-icon glyphicon glyphicon-list-alt"></i>
+                            <span class="menu-text"> 编码解码 </span>
+                        </a>
+                    </li>
+                    <li data-flag="encrypt">
+                        <a href="http://ofmonkey.com/encrypt/md5">
+                            <i class="menu-icon glyphicon glyphicon-screenshot"></i>
+                            <span class="menu-text"> 加密解密 </span>
+                        </a>
+                    </li>
+                    <li data-flag="transfer">
+                        <a href="http://ofmonkey.com/transfer/dbc">
+                            <i class="menu-icon glyphicon glyphicon-edit"></i>
+                            <span class="menu-text"> 字符转换 </span>
+                        </a>
+                    </li>
+                    <li data-flag="unit">
+                        <a href="http://ofmonkey.com/unit/binary">
+                            <i class="menu-icon glyphicon glyphicon-gbp"></i>
+                            <span class="menu-text"> 单位换算 </span>
+                        </a>
+                    </li>
+                    <li data-flag="format">
+                        <a href="http://ofmonkey.com/format/js">
+                            <i class="menu-icon glyphicon glyphicon-asterisk"></i>
+                            <span class="menu-text"> 代码格式化 </span>
+                        </a>
+                    </li>
+                    <li data-flag="regex">
+                        <a href="http://ofmonkey.com/regex/test">
+                            <i class="menu-icon glyphicon glyphicon-book"></i>
+                            <span class="menu-text"> 正则表达式 </span>
+                        </a>
+                    </li>
+                    <li data-flag="ercode">
+                        <a href="http://ofmonkey.com/ercode/create">
+                            <i class="menu-icon glyphicon glyphicon-qrcode"></i>
+                            <span class="menu-text">
+                                二维码生成
+                            </span>
+                        </a>
+                    </li>
+                    <li data-flag="barcode">
+                        <a href="http://ofmonkey.com/barcode/create">
+                            <i class="menu-icon glyphicon glyphicon-barcode"></i>
+                            <span class="menu-text">
+                                条形码生成
+                            </span>
+                        </a>
+                    </li>
+                    <li data-flag="docs">
+                        <a href="http://ofmonkey.com/docs/http">
+                            <i class="menu-icon glyphicon glyphicon-link"></i>
+                            <span class="menu-text"> 常用参考表 </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-content" style="padding:20px 25px;background:#fff;">
+                
+
+
+<div>
+        <ul class="funs-container">
+                        <li>
+                            <a href="http://ofmonkey.com/query/local" class="funs-title">本机IP</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：9307</span>
+                                <a href="http://ofmonkey.com/query/local" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/query/http" class="funs-title">http模拟查询</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：4478</span>
+                                <a href="http://ofmonkey.com/query/http" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/query/ip" class="funs-title">IP归属地查询</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：3165</span>
+                                <a href="http://ofmonkey.com/query/ip" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/query/domain" class="funs-title">域名归属地查询</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2924</span>
+                                <a href="http://ofmonkey.com/query/domain" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/query/phone" class="funs-title">手机归属地查询</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2776</span>
+                                <a href="http://ofmonkey.com/query/phone" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/query/today" class="funs-title">历史上的今天</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：3653</span>
+                                <a href="http://ofmonkey.com/query/today" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/front/color" class="funs-title">在线调色板</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：9413</span>
+                                <a href="http://ofmonkey.com/front/color" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/front/hex" class="funs-title">RGB转16进制</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：3297</span>
+                                <a href="http://ofmonkey.com/front/hex" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/front/rem" class="funs-title">px转rem</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：14701</span>
+                                <a href="http://ofmonkey.com/front/rem" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/front/markdown" class="funs-title">在线MarkDown</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：3032</span>
+                                <a href="http://ofmonkey.com/front/markdown" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/entity/json" class="funs-title">json生成实体</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：8282</span>
+                                <a href="http://ofmonkey.com/entity/json" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/entity/xml" class="funs-title">xml生成实体</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2701</span>
+                                <a href="http://ofmonkey.com/entity/xml" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/entity/string" class="funs-title">字符串生成实体</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2220</span>
+                                <a href="http://ofmonkey.com/entity/string" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encode/url" class="funs-title">Url编码解码</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：7773</span>
+                                <a href="http://ofmonkey.com/encode/url" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encode/html" class="funs-title">Html编码解码</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1930</span>
+                                <a href="http://ofmonkey.com/encode/html" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encode/ascii" class="funs-title">ASCII编码解码</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1665</span>
+                                <a href="http://ofmonkey.com/encode/ascii" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encode/utf8" class="funs-title">Utf-8编码解码</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1956</span>
+                                <a href="http://ofmonkey.com/encode/utf8" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encode/unicode" class="funs-title">Unicode编码解码</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1740</span>
+                                <a href="http://ofmonkey.com/encode/unicode" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encrypt/md5" class="funs-title">MD5加密</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：7216</span>
+                                <a href="http://ofmonkey.com/encrypt/md5" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encrypt/base64" class="funs-title">Base64加密解密</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2652</span>
+                                <a href="http://ofmonkey.com/encrypt/base64" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encrypt/image64" class="funs-title">图片转Base64</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2524</span>
+                                <a href="http://ofmonkey.com/encrypt/image64" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/encrypt/filemd5" class="funs-title">文件转MD5</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1771</span>
+                                <a href="http://ofmonkey.com/encrypt/filemd5" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/transfer/dbc" class="funs-title">全角半角转换</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：5010</span>
+                                <a href="http://ofmonkey.com/transfer/dbc" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/transfer/upper" class="funs-title">大小写转换</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1260</span>
+                                <a href="http://ofmonkey.com/transfer/upper" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/transfer/unix" class="funs-title">Unix时间戳</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1858</span>
+                                <a href="http://ofmonkey.com/transfer/unix" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/transfer/len" class="funs-title">计算字符长度</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1101</span>
+                                <a href="http://ofmonkey.com/transfer/len" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/transfer/guid" class="funs-title">生成GUID</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1206</span>
+                                <a href="http://ofmonkey.com/transfer/guid" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/transfer/url" class="funs-title">URL参数格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2907</span>
+                                <a href="http://ofmonkey.com/transfer/url" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/unit/binary" class="funs-title">进制转换</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：4470</span>
+                                <a href="http://ofmonkey.com/unit/binary" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/unit/time" class="funs-title">时间转换</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1286</span>
+                                <a href="http://ofmonkey.com/unit/time" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/format/js" class="funs-title">js压缩格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：9711</span>
+                                <a href="http://ofmonkey.com/format/js" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/format/html" class="funs-title">html压缩格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2522</span>
+                                <a href="http://ofmonkey.com/format/html" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/format/css" class="funs-title">css压缩格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2422</span>
+                                <a href="http://ofmonkey.com/format/css" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/format/json" class="funs-title">json压缩格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：6335</span>
+                                <a href="http://ofmonkey.com/format/json" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/format/xml" class="funs-title">xml压缩格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：2349</span>
+                                <a href="http://ofmonkey.com/format/xml" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/format/sql" class="funs-title">sql压缩格式化</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1860</span>
+                                <a href="http://ofmonkey.com/format/sql" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/regex/test" class="funs-title">正则在线测试</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：6466</span>
+                                <a href="http://ofmonkey.com/regex/test" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/ercode/create" class="funs-title">二维码生成</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：6024</span>
+                                <a href="http://ofmonkey.com/ercode/create" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/barcode/create" class="funs-title">条形码生成</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：4168</span>
+                                <a href="http://ofmonkey.com/barcode/create" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/docs/http" class="funs-title">Http状态码</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：4890</span>
+                                <a href="http://ofmonkey.com/docs/http" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/docs/contenttype" class="funs-title">Content-Type</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1743</span>
+                                <a href="http://ofmonkey.com/docs/contenttype" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/docs/html" class="funs-title">Html转义符</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1544</span>
+                                <a href="http://ofmonkey.com/docs/html" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/docs/ascii" class="funs-title">ASCII码表</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：1386</span>
+                                <a href="http://ofmonkey.com/docs/ascii" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="http://ofmonkey.com/regex/docs" class="funs-title">常用正则参考</a>
+                            <p class="funs-desc">
+                                <span class="funs-count">使用次数：3081</span>
+                                <a href="http://ofmonkey.com/regex/docs" class="btn btn-default btn-xs funs-button">使用</a>
+                            </p>
+                        </li>
+        </ul>
+</div>
+
+
+
+
+
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="side-nav">
+        <a href="http://ofmonkey.com/m/talk">留言</a>
+        <a class="btnHelp" href="javscript:void(0)">赞助</a>
+        <a id="backTop" href="javascript:void(0)" style="display:none;">置顶</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">感谢赞助</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="help-table">
+                        <tr>
+                            <td>
+                                <img class="help-image" src="http://ofmonkey.com/images/weixin.png" />
+                            </td>
+                            <td>
+                                <img class="help-image" src="http://ofmonkey.com/images/alipay.jpg" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://ofmonkey.com/Content/themes/blueskin/js/beyond.min.js"></script>
+
+    <input id="hiddenToken" name="hiddenToken" type="hidden" value="00000000-0000-0000-0000-000000000000636472493069399546" />
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 200) {
+                    $('#backTop').fadeIn(300);
+                } else {
+                    $('#backTop').fadeOut(300);
+                }
+            });
+            $('#backTop').click(function () { $('html,body').animate({ scrollTop: '0px' }, 500); });
+
+            $(document).on("click", ".btnHelp", function () {
+                $("#myModal").modal("show");
+            });
+        });
+
+        $(function () {
+            var hash = location.hash;
+            if (hash) {
+                var $nav = $("#myTab");
+                var $cur = $nav.find('a[href="' + hash + '"]');
+                $cur.click();
+            }
+        });
+
+        (function () {
+            //当前页导航高亮显示
+            var isIndex = true;
+            var href = location.href.toLowerCase();
+            var $lis = $(".nav-pill").children("li");
+            $.each($lis, function () {
+                var nav = $(this).attr("data-flag");
+                if (href.indexOf(nav) > 0) {
+                    $(this).addClass("active");
+                    isIndex = false;
+                    return false;
+                }
+            });
+
+            if (isIndex)
+                $(".nav-pill li").eq(0).addClass("active");
+        }());
+    </script>
+
+
+
+				</div>
+			</div>
+			
+		</main>
+		<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="brand">
+							RenGang.ren
+							<div class="slogan">
+								励志做一个优秀的全栈工程师
+							</div>
+						</div>
+						<div class="copyright">
+							Copyright
+							<span>©</span>
+							<script>document.write((new Date).getFullYear())</script>
+							<a href="#">ren.github.io</a>
+							. All Rights Reserved.
+						</div>
+					</div>
+					<div class="col-lg-2" style="-background: green;">
+						
+							<h4>声明</h4>
+							<nav>
+								<ul class="nav">
+									<li><a href="http://www.w3cplus.com/">W3CPlus</a></li>
+									<li><a href="http://www.w3ctech.com/">W3CTech</a></li>
+								</ul>
+							</nav>
+						
+					</div>
+					<div class="col-lg-2" style="-background: green;">
+						
+							<h4>关于</h4>
+							<nav>
+								<ul class="nav">
+									<li><a href="http://www.w3cplus.com/">W3CPlus</a></li>
+									<li><a href="http://www.w3ctech.com/">W3CTech</a></li>
+									<li><a href="http://www.css88.com/">Web前端开发</a></li>
+								</ul>
+							</nav>
+						
+					</div>
+					<div class="col-lg-2" style="-background: green;">
+						
+							<h4>友情链接</h4>
+							<nav>
+								<ul class="nav">
+									<li><a href="http://www.w3cplus.com/">W3CPlus</a></li>
+									<li><a href="http://www.w3ctech.com/">W3CTech</a></li>
+									<li><a href="http://www.css88.com/">Web前端开发</a></li>
+									<li><a href="http://www.qianduan.net/">前端观察</a></li>
+								</ul>
+							</nav>
+						
+					</div>
+					<div class="col-lg-3" style="-background: purple;">
+						<div class="row">
+							<div class="col-md-12" style="text-align: center;">
+								<img src="images/home/weibo2.png" alt="" style="width: 150px;height: 150px;" />
+								<p>微信公共号</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<div id="back">
+			<span>Top</span>
+			<i class="icon icon-arrow-up"></i>
+		</div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

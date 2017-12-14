@@ -1,0 +1,94 @@
+main{
+    .banner{
+        width: 100%;height: 320px;overflow: hidden;position: relative;
+        .banner-bg{
+            width: 100%;height: 100%;position: absolute;left: 0;top: 0;
+            background: url(../images/blog/banner/banner-1.jpg) no-repeat;
+            background-size: 100% 100%;
+            z-index: -1;
+            &::after{
+                content: '.';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: #000000;
+                opacity: .2;
+            }
+        }
+        .banner-content{
+            position: absolute;left: 0;top: 0;width: 100%;height: 100%;
+            .banner-content-title{
+                text-align: center;font-size: 6em;color: #fff;margin-top: 100px ;
+            }
+            .banner-content-info{
+                text-align: center;color: #fff;
+            }
+        }
+    }
+    #contact{
+        >.col-lg-10{
+            float: none;margin: 20px auto;position: relative;
+            &::after{
+                content: '.';
+                width: 100%;
+                height: 100%;
+                visibility: hidden;
+                clear: both;
+            }
+            .contact-box-title{
+                height: 40px;line-height: 40px;font-size: 18px;font-weight: bold;
+            }
+            .contact-box-content{
+               padding: 0 20px;
+               p{
+                 font-size: 18px;line-height: 30px;
+               }
+            }
+            .form{        
+                p{
+                    width: 100%;line-height: 40px;font-size: 18px;margin: 20px 0;position: relative;
+                    label{
+                        position: absolute;top: 0;left: 10px;line-height: 45px;
+                    }
+                    input{
+                        width:100%;padding-left: 70px;
+                    }
+                    textarea{
+                        width: 100%;
+                    }
+                    &.send {
+                        text-align: right;
+                        button{
+                            height: 30px;line-height: 30px;padding: 0 10px;margin: 0 10px;
+                        }
+                    }
+                }
+            }
+            .content{
+                .content-box{
+                    padding-left: 20px;
+                    .content-info{
+                        
+                        >div{
+                            span{
+                                font-size: 20px;color: red;
+                            }
+                            time{
+                                font-size: 18px;color: #aaa;
+                            }
+                        }
+                        >p{
+                            padding-left: 50px;font-size: 18px;line-height: 26px;
+                        }
+                        >a{
+                            margin-left: 50px;display: inline-block;padding: 10px;font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

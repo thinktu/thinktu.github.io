@@ -1,0 +1,215 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+   background: url(../images/login/login-bg.jpg) 0 0 ;
+   background-size: 100% 100%;
+    overflow: hidden;
+}
+/*
+@media (min-width: 768px) {
+    body {
+        background-image: url('../assets/images/login_bg.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+*/
+@media (max-width: 768px) {
+    body {
+        background: url(../images/login/login-bg.jpg) center center no-repeat;
+    }
+}
+
+.btn:focus,
+input:focus {
+    outline: none;
+    border: none;
+}
+
+.padding-line {
+    height: 1px;
+    margin-top: 150px;
+    /*background-color: #506776;*/
+    margin-left: -5%;
+    margin-right: -5%;
+}
+
+.container {
+    max-width: 480px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin-top: 120px;
+    opacity: .8;
+}
+
+#nav-menu {
+    height: 48px;
+    max-width: 480px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #fafafa;
+    border-radius: 20px;
+}
+#nav-menu ul li {
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    color: #868d9b;
+}
+#nav-menu .login {
+    width: 44%;
+}
+#nav-menu .divider {
+    width: 10%;
+    color: #dde1e7;
+}
+#nav-menu .register {
+    width: 44%;
+}
+#nav-menu .active {
+    color: #4d95fb;
+    border-bottom: 2px solid #4d95fb;
+}
+
+#login-overview,
+#register-overview {
+    padding: 8% 0px;
+}
+#login-msg,
+#register-msg {
+    /*display: none;*/
+    visibility: hidden;
+    margin-bottom: 10px;
+    /*text-indent: -999px;*/
+}
+.container .alert-warning {
+    border: none;
+    background-color: #fee8e8;
+    font-size: 12px;
+    color: #d15a5a;
+    padding: 10px 15px;
+    border-radius: 2px;
+    /*text-align: center;*/
+}
+
+.container form input {
+    height: 50px;
+    color: #cacdd3;
+    background-color: #ffffff;
+    border: 1px solid #dde1e7;
+    border-radius: 2px;
+    font-size: 16px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+.container form input:hover,
+.container form input:focus {
+    border: 1px solid #9ba1ac;
+    color: #7b8392;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #7b8392;
+}
+.container form input.btn {
+    background-color: #4d95fb;
+    color: #ffffff;
+    border: 0;
+}
+.container form input.btn:hover,
+.container form input.btn:focus,
+.container form input.btn:active,
+.container form input.btn:visited {
+    background-color: #64a3fd;
+    color: #c2dafe;
+    border: none;
+    outline: none;
+}
+.container .forgot-password {
+    color: #868d9b;
+    font-size: 14px;
+    margin-top: -10px;
+    /*text-decoration: underline;*/
+}
+.container .forgot-password:hover,
+.container .forgot-password:focus,
+.container .forgot-password:active,
+.container .forgot-password:visited {
+    text-decoration: none;
+}
+.container .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.container .form-group:first-child {
+    margin-bottom: 0;
+}
+.container .form-group:nth-child(2) {
+    display: inline-block;
+}
+
+#login-overview {
+    /*display: none;*/
+}
+
+#register-overview {
+    display: none;
+    /*
+     position: absolute;
+     top: 0;
+     width: 100%;
+     margin-top: 33%;
+     right: 100%;
+     */
+}
+
+#strength {
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    line-height: 18px;
+}
+.red {
+    color: #fb4738;
+}
+.low {
+    color: #fecf71;
+}
+.middle {
+    color: #669ae1;
+}
+.high {
+    color: #61d01c;
+}
+
+.demo {
+    padding-top: 12%;
+    padding-bottom: 20%;
+    text-align: center;
+}
+.demo a {
+    color: #868d9b;
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 20px;
+    border: 1px solid #868d9b;
+    border-radius: 2px;
+}
+.demo a:hover,
+.deme a:focus {
+    color: #4d95fb;
+    border: 1px solid #4d95fb;
+    text-decoration: none;
+}

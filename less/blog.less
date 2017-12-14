@@ -1,0 +1,96 @@
+main{
+    .banner{
+        width: 100%;height: 320px;overflow: hidden;position: relative;
+        .banner-bg{
+            width: 100%;height: 100%;position: absolute;left: 0;top: 0;
+            background: url(../images/blog/banner/banner-1.jpg) no-repeat;
+            background-size: 100% 100%;
+            z-index: -1;
+            &::after{
+                content: '.';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: #000000;
+                opacity: .2;
+            }
+        }
+        .banner-content{
+            position: absolute;left: 0;top: 0;width: 100%;height: 100%;
+            .banner-content-title{
+                text-align: center;font-size: 6em;color: #fff;margin-top: 100px ;
+            }
+            .banner-content-info{
+                text-align: center;color: #fff;
+            }
+        }
+        
+        
+    }
+    #blog{
+        width: 100%;height: 835px;background: #eee;
+        .blog-aside{
+            .blog-aside-clock,.blog-aside-classify,.blog-aside-date,.blog-aside-top10{
+                width: 100%;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 5px 5px 0.6;
+                padding: 10px 0;
+                p{
+                    padding-left: 5px;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                ul{
+                    padding-left: 20px;
+                    li{
+                        height: 20px;
+                        line-height: 20px;
+                        a{
+                            color: #333;
+                        }
+                    }
+                }
+            }
+            .blog-aside-clock{
+                height: 150px;
+            }
+            
+            .blog-aside-date{
+                height: 285px;
+                overflow-y: scroll;
+            }
+            .blog-aside-top10{
+                height: 245px;
+            }
+        }
+        .blog-content{
+            padding: 10px;
+            .blog-content-box{
+                margin-bottom: 20px;padding:0 20px;border: 1px solid #ccc;border-radius: 5px;
+                .blog-content-box-header{
+                    a{
+                        font-size: 18px;display: inline-block;height: 40px;line-height: 40px;
+                    }
+                }
+                .blog-content-box-main{
+                    color: #666;line-height: 20px;
+                }
+                .blog-content-box-footer{
+                    padding: 20px 5px;text-align: right;color: #999;
+                }
+            }
+            #page{
+                nav{
+                    ul{
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+       
+    }
+}
