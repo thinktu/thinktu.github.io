@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/less" href="./css/hangqing.less" />
+		<!-- Load Babel -->
+	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+	    <!-- Your custom script here -->
+	    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	    <!--<script src="js/hangqing.js" type="text/javascript" charset="utf-8"></script>-->
+	    <script src="js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+	    		refresh();
+	    		function refresh(){
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getLuntanList?pageSize=10&page=1&daima=USDX",
+						async:true,
+						dataType:'jsonp',
+						success:function(res){
+							if(res.resultCode==="1"){
+								var data=res.data,list=data.list,listLen=list.length;
+								for(var i=0;i<listLen;i++){
+									var contactList=list[i];
+									var avatar=contactList.avatar,id=contactList.id,title=contactList.title,time=contactList.time,create_time=contactList.create_time,nick=contactList.nick,publish=contactList.publish,pinglun=contactList.pinglun;
+									nick=parseInt(nick)? (nick.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')+'') : (nick);
+									var str=`
+										<div class="user">
+											<img src=${avatar} alt="" />
+										</div>
+										<div class="msg">
+											<article>
+												<header class="msg-header">
+													<div class="msg-user">${nick}</div>
+													<div class="msg-del"><i class="fa fa-trash-o" onclick="del(publish)"></i></div>
+												</header>
+												<main class="msg-main">
+													<div class="msg-content">
+														${title}
+													</div>
+												</main>
+												<footer class="msg-footer">
+													<div class="time">
+														<span>${create_time}</span>
+													</div>
+													<div class="count">
+														<span class="count-comment">
+															<i class="fa fa-commenting-o" onclick="comment(id)"></i>
+														</span>
+													</div>
+													
+												</footer>
+											</article>
+											<article>
+												<ul class="contact-list-info">
+													
+												</ul>
+											</article>
+										</div>
+									`;
+									var section=$('<section class="contact-list">'+str+'</section>');
+//									var countComment=section.find('.count-comment i');
+//									countComment.click(function(){
+//										$('.footer .send-info').focus().css('color','#333');
+//										$('.footer .send-btn').click(function(){
+//											//这里要判断用户是否登录
+//											var val=$('.footer .send-info').val();
+//											//创建li评论列表
+//											console.log(val)
+//											
+//											
+//										})
+//									})
+									$('.main').append(section);
+									for(var j=0;j<pinglun.length;j++){
+										var strLi=`
+											<li class="info-item">
+												<span class="user2">${pinglun[j].nick}</span>
+												回复
+												<span class="user1">${pinglun[j].receiveNick}</span>：${pinglun[j].content}
+											</li>
+//											<li class="info-item">
+//												<span class="user2" onclick="huifu(${pinglun[j].nick})">${pinglun[j].nick}</span>
+//												回复
+//												<span class="user1" onclick="huifu(${pinglun[j].receiveNick})">${pinglun[j].receiveNick}</span>：${pinglun[j].content}
+//											</li>
+										`;
+										var Li=$('<li>'+strLi+'</li>');
+										section.find('ul.contact-list-info').append(Li);
+									}
+									
+								}
+								
+							}
+							//操作dom
+							//回复
+//							function huifu(person){
+//								$('.footer .send-info').focus().css('color','#333');
+//								var val=$('.footer .send-info').val();
+//								$.ajax({
+//									type:"post",
+//									url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addHangQingPingLun",
+//									async:true,
+//									dataType:'jsonp',
+//									data:{
+//										accessToken:'aa1d684ebc064445b53d7f3a6f929eac',
+//										id:id,
+//										initId:initId,
+//										receiveId:receiveId,
+//										content:val
+//										
+//									},
+//									success:function(){
+//										
+//									}
+//									
+//								});
+//							}
+							//评论title
+							function comment(id,initId,receiveId){
+								$('.footer .send-info').focus().css('color','#333');
+								var val=$('.footer .send-info').val();
+								$.ajax({
+									type:"post",
+									url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addHangQingPingLun",
+									async:true,
+									dataType:'jsonp',
+									data:{
+										accessToken:'aa1d684ebc064445b53d7f3a6f929eac',
+										id:id,
+										initId:initId,
+										receiveId:receiveId,
+										content:val
+										
+									},
+									success:function(){
+										
+									}
+									
+								});
+							}
+							//删除评论
+							function del(publish){
+								if(publish==='1'){
+									$.ajax({
+										type:"post",
+										url:"http://47.92.113.203:8080/fx-tycoon/hangqing/deleteHangQingLunTan",
+										async:true,
+										dataType:'jsonp',
+										data:{
+											id:id,
+											accessToken:'aa1d684ebc064445b53d7f3a6f929eac'
+										},
+										success:function(res){
+											if(res.resultCode==="1"){
+												$('.main').empty();
+												refresh();
+											}else{
+												alert('删除失败，请重新删除！');
+											}
+										}
+									});
+								}else{
+									alert('这条评论不是你发的，不能删除！')
+								}
+							}
+							
+								
+							
+						}
+					});
+				}
+				function getZhangDie(){
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getZhangDieLv?daima=USDX",
+						async:true,
+						dataType:'jsonp',
+						success:function(res){
+							if(res.resultCode==='1'){
+								var data=res.data,dieLv=data.dieLv,zhangLv=data.zhangLv;
+								$('.up').animate({
+									width:zhangLv+'%'
+								})
+								$('.down').animate({
+									width:dieLv+'%'
+								})
+								$('.up').width(zhangLv+'%');
+								$('.down').width(dieLv+'%');
+							}
+						}
+						
+					});
+				}
+				getZhangDie();
+				$('.bar-up span').click(function(){
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addZhangLv?daima=USDX",
+						async:true,
+						dataType:'jsonp',
+						success:function(res){
+							getZhangDie();
+//							if(res.resultCode==='1'){
+//								var data=res.data,dieLv=data.dieLv,zhangLv=data.zhangLv;
+//								$('.up').width(zhangLv+'%');
+//								$('.down').width(dieLv+'%');
+//							}
+						}
+					});
+				});
+				$('.bar-down span').click(function(){
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addDieLv?daima=USDX",
+						async:true,
+						dataType:'jsonp',
+						
+						success:function(res){
+							getZhangDie();
+//							if(res.resultCode==='1'){
+//								var data=res.data,dieLv=data.dieLv,zhangLv=data.zhangLv;
+//								$('.up').width(zhangLv+'%');
+//								$('.down').width(dieLv+'%');
+//							}
+						}
+					});
+				});
+				
+				//添加评论
+				$('.footer .send-info').focus().css('color','#333');
+				$('.footer .send-btn').click(function(){
+					//这里要判断用户是否登录
+					var val=$('.footer .send-info').val();
+					//创建li评论列表
+					$.ajax({
+						type:"post",
+						url:"http://47.92.113.203:8080/fx-tycoon/hangqing/addHangQingLunTan",
+						async:true,
+						dataType:'jsonp',
+						data:{
+							title:val,
+							accessToken:'aa1d684ebc064445b53d7f3a6f929eac'
+						},
+						success:function(res){
+							if(!res.resultCode==="1"){
+								alert('发送失败！请重新发送...')
+							}else{
+								$('.main').empty();
+								refresh();
+								$('.footer .send-info').val('').blur();
+							}
+						}
+					});
+					
+					
+				})
+				
+			});
+	    </script>
+	</head>
+	<body>
+		<div class="container-wrap">
+			<header class="header">
+				<div class="header-l"><i class="fa fa-chevron-left"></i></div>
+				<div class="header-c">黄金</div>
+				<div class="header-r"><i></i></div>
+			</header>
+			<main class="main">
+				<div class="bar">
+					<span class="up"></span>
+					<span class="down"></span>
+				</div>
+				<div class="bar-content">
+					<div class="bar-up">
+						<span>看涨</span>
+						<i class="fa fa-line-chart"></i>
+					</div>
+					<div class="bar-down">
+						<span>看跌</span>
+						<i class="fa fa-line-chart"></i>
+					</div>	
+				</div>
+				
+				
+			</main>
+			<footer class="footer">
+				<form class="content-send">
+					<i class="fa fa-pencil"></i>
+					<input type="text" class="send-info" placeholder="请输入您的观点" />
+					<button type="button" class="send-btn">发布</button>
+				</form>
+			</footer>
+		</div>
+	</body>
+</html>

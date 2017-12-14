@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/less" href="./css/hangqing.less" />
+		<!-- Load Babel -->
+	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+	    <!-- Your custom script here -->
+	    <script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	    <!--<script src="js/hangqing.js" type="text/javascript" charset="utf-8"></script>-->
+	    <script src="js/babel.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+				$.ajax({
+					type:"post",
+					url:"http://47.92.113.203:8080/fx-tycoon/hangqing/getLuntanList?pageSize=10&page=1&daima=USDX",
+					async:true,
+					dataType:'jsonp',
+					success:function(res){
+						console.log(res);
+						if(res.resultCode==="1"){
+							var data=res.data,list=data.list,listLen=list.length;
+							for(var i=0;i<listLen;i++){
+								var contactList=list[i];
+								var avatar=contactList.avatar,id=contactList.id,title=contactList.title,time=contactList.time,create_time=contactList.create_time,nick=contactList.nick,publish=contactList.publish,pinglun=contactList.pinglun;
+								
+								var user=`
+									<div class="user">
+										<img src=${avatar} alt="" />
+									</div>
+								`;
+								
+								
+								
+								var section=$('<section class="contact-list"></section>');
+								
+							}
+						
+						}
+					}
+				});
+			});
+	    </script>
+	</head>
+	<body>
+		<div class="container-wrap">
+			<header class="header">
+				<div class="header-l"><i class="fa fa-chevron-left"></i></div>
+				<div class="header-c">黄金</div>
+				<div class="header-r"><i></i></div>
+			</header>
+			<main class="main">
+				<div class="bar">
+					<span class="up"></span>
+					<span class="down"></span>
+				</div>
+				<div class="bar-content">
+					<div class="bar-up">
+						<span>看涨</span>
+						<i class="fa fa-line-chart"></i>
+					</div>
+					<div class="bar-down">
+						<span>看跌</span>
+						<i class="fa fa-line-chart"></i>
+					</div>	
+				</div>
+				<section class="contact-list">
+					<div class="user">
+						<img src="user.png" alt="" />
+					</div>
+					<div class="msg">
+						<article>
+							<header class="msg-header">
+								<div class="msg-user">用户130***17017</div>
+								<div class="msg-del"><i class="fa fa-trash-o"></i></div>
+							</header>
+							<main class="msg-main">
+								<div class="msg-content">
+									美国总统特朗普对朝鲜的"怒火打击"、及朝鲜认真考虑“围攻关岛”的言论引发波动。瑞郎日内表现尤其强势，VIX恐慌指数亦触及一个月以来新高。
+								</div>
+							</main>
+							<footer class="msg-footer">
+								<div class="time">
+									<span>1小时前</span>
+								</div>
+								<div class="count">
+									<span class="count-comment">
+										<i class="fa fa-commenting-o"></i>
+									</span>
+								</div>
+								
+							</footer>
+						</article>
+						<article>
+							<ul class="contact-list-info">
+								<li class="info-item">
+									<span class="user1">克朗普斯</span>
+									回复
+									<span class="user2">我</span>：上的活动是否开始大量回复苏打绿返回拉萨的萨克减肥好看撒拉等级划分拉克丝奥斯卡短发
+短的发生的机会发生经过发酵申达股份哈市地方换个。
+								</li>
+								<li class="info-item">
+									<span class="user2">我</span>
+									回复
+									<span class="user1">用户1314</span>：那是当然的了
+								</li>
+							</ul>
+						</article>
+					</div>
+				</section>
+				<section class="contact-list">
+					<div class="user">
+						<img src="user.png" alt="" />
+					</div>
+					<div class="msg">
+						<article>
+							<header class="msg-header">
+								<div class="msg-user">用户130***17017</div>
+								<div class="msg-del"><i class="fa fa-trash-o"></i></div>
+							</header>
+							<main class="msg-main">
+								<div class="msg-content">
+									美国总统特朗普对朝鲜的"怒火打击"、及朝鲜认真考虑“围攻关岛”的言论引发波动。瑞郎日内表现尤其强势，VIX恐慌指数亦触及一个月以来新高。
+								</div>
+							</main>
+							<footer class="msg-footer">
+								<div class="time">
+									<span>1小时前</span>
+								</div>
+								<div class="count">
+									<span class="count-comment">
+										<i class="fa fa-commenting-o"></i>
+									</span>
+								</div>
+								
+							</footer>
+						</article>
+						<article>
+							<ul class="contact-list-info">
+								<li class="info-item">
+									<span class="user1">克朗普斯</span>
+									回复
+									<span class="user2">我</span>：上的活动是否开始大量回复苏打绿返回拉萨的萨克减肥好看撒拉等级划分拉克丝奥斯卡短发
+短的发生的机会发生经过发酵申达股份哈市地方换个。
+								</li>
+								<li class="info-item">
+									<span class="user2">我</span>
+									回复
+									<span class="user1">用户1314</span>：那是当然的了
+								</li>
+							</ul>
+						</article>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<form class="content-send">
+					<i class="fa fa-pencil"></i>
+					<input type="text" class="send-info" placeholder="请输入您的观点" />
+					<button type="button" class="send-btn">发布</button>
+				</form>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+/* * less * author:hoyuet * date:2017-11-8 */
+ @headerbg:#4167B2;
+ @wihte:#fff;
+ @test:red;
+ @bg:#E7E7E7;
+// .border-bottom0.1rem(){
+//   border-bottom: 0.1rem solid #E7E7E7;
+//}
+// .border-bottom0.02rem(){
+//   border-bottom: 0.02rem solid #E7E7E7;
+//}
+ *{
+     margin: 0;
+     padding: 0;
+}
+ html{
+     background: @bg;
+}
+ .container-wrap{
+     width: 7.5rem;
+     height: auto;
+     background: @bg;
+     margin-bottom: 1.1rem;
+     .header{
+         display: flex;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 1;
+         width: 7.5rem;
+         height: 0.88rem;
+         line-height: 0.88rem;
+         font-size: 0.29rem;
+         background:@headerbg;
+         >div{
+             text-align: center;
+             color: @wihte;
+             &.header-l{
+                 flex-basis: 1rem;
+                 flex-grow: 0;
+                 flex-shrink: 0;
+            }
+             &.header-c{
+                 flex: auto;
+            }
+             &.header-r{
+                 flex-basis: 1rem;
+                 flex-grow: 0;
+                 flex-shrink: 0;
+            }
+        }
+    }
+     .main{
+         width: 7.5rem;
+         height: auto;
+         min-height: 11.4rem;
+         margin-top: 0.88rem;
+         section{
+             width: 7.5rem;
+             height: auto;
+             box-sizing: border-box;
+             background: #fff;
+             padding-bottom: 0.1rem;
+             textarea{
+                 display: inline-block;
+                 width: 100%;
+                 height: auto;
+                 min-height: 3rem;
+                 border: none;
+                 font-size: 0.24rem;
+            }
+             .file{
+                 position: relative;
+                 i{
+                     width: 1rem;
+                     height: 1rem;
+                     text-align: center;
+                     line-height: 1rem;
+                     font-size: 0.6rem;
+                     border: 1px solid #eaeaea;
+                     #photo{
+                         position: absolute;
+                         left: 0;
+                         top: 0;
+                         width: 1rem;
+                         height: 1rem;
+                         opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+ 

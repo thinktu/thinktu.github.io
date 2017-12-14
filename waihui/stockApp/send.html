@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/less" href="./css/send01.less" />
+		<!-- Load Babel -->
+	    <!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+	    <!-- Your custom script here -->
+	    <script src="js/less.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container-wrap">
+			<header class="header">
+				<div class="header-l"><i class="fa fa-chevron-left"></i></div>
+				<div class="header-c">动态详情</div>
+				<div class="header-r">发表</div>
+			</header>
+			<main class="main">
+				<section class="content">
+					<textarea>评论评论</textarea>
+					<div id="imgcontent"></div>
+					<div class="file">
+						
+						<i class="fa fa-plus"><input type="file" id="photo"></i>
+					</div>
+					<script>
+						document.getElementById('photo').addEventListener('change',function(e){
+						
+						var files = this.files;
+						var img = new Image();
+						var reader = new FileReader();
+						reader.readAsDataURL(files[0]);
+						reader.onload = function(e){
+							var mb = (e.total/1024)/1024;
+							if(mb>= 2){
+								alert('文件大小大于2M');
+								return;
+							}
+							img.src = this.result;
+							img.style.width = "100px";
+							img.style.height = "100px";
+							img.style.marginRight='5px';
+							document.getElementById('imgcontent').appendChild(img);
+						}
+					});
+					</script>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>
