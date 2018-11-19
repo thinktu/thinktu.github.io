@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>地图导航demo</title>
+	<script type="text/javascript" src="zepto.min.js"></script>
+	<style type="text/css">
+	*{margin: 0;padding: 0;list-style: none;}
+		html{font-size: 100px;}
+		a{display: inline-block; width: 100%;height: 0.5rem;line-height: 0.5rem;font-size: 0.4rem;}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('#map_gaode').on('click',function(){
+				window.location.href = "uri.amap.com/navigation?from=116.478346,39.997361,startpoint&to=116.3246,39.966577,endpoint&via=116.402796,39.936915,midwaypoint&mode=car&policy=1&src=mypage&coordinate=gaode&callnative=1"
+			})
+			$('#map_baidu').on('click',function(){
+				window.location.href = "http://api.map.baidu.com/direction?origin=latlng:34.264642646862,108.95108518068|name:我家&destination=大雁塔&mode=driving&region=西安&output=html&src=webapp.baidu.openAPIdemo"
+			})
+		})
+	</script>
+</head>
+<body>
+	<a href="javascript:;" id="map_baidu">百度地图</a>
+	<a href="javascript:;" id="map_gaode">高德地图</a>
+
+</body>
+</html>
