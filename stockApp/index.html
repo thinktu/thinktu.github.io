@@ -13,7 +13,7 @@
 		$(function(){
 			getMap('望京SOHO','双安商场',116.43234,39.98871,116.709684,39.89778);
 			function getMap(origin,destination,originLat,originLon,destinationLat,destinationLon,){
-				$('#map_baidu').attr('href','http://api.map.baidu.com/direction?origin='+originLon+','+originLat+'&destination='+destinationLon+','+destinationLat+'&mode=driving&origin_region='+origin+'&destination_region='+destination+'&output=html');
+				$('#map_baidu').attr('href','http://api.map.baidu.com/direction?origin=name:'+origin+'|latlng:'+originLon+','+originLat+'&destination=name:'+destination+'|latlng:'+destinationLon+','+destinationLat+'&mode=driving&output=html');
 				$('#map_gaode').attr('href','http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1');
 				// var typeApp = navigator.userAgent;
 				// var isAndroid = /android/i.test(typeApp);
