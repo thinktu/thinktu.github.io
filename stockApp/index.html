@@ -10,6 +10,10 @@
 	</style>
 	<script type="text/javascript">
 		$(function(){
+			var typeApp = navigator.userAgent;
+			var isAndroid = /android/i.test(typeApp);
+			var isIos = /ipad|iphone/i.test(typeApp);
+			alert(isIos,isAndroid,typeApp)
 			$('#map_gaode').on('click',function(){
 				window.location.href = "http://uri.amap.com/navigation?from=116.478346,39.997361,startpoint&to=116.3246,39.966577,endpoint&via=116.402796,39.936915,midwaypoint&mode=car&policy=1&src=mypage&coordinate=gaode&callnative=1"
 			})
