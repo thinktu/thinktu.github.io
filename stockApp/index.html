@@ -3,6 +3,7 @@
 <head>
 	<title>地图导航demo</title>
 	<script type="text/javascript" src="zepto.min.js"></script>
+	<meta charset="utf-8">
 	<style type="text/css">
 	*{margin: 0;padding: 0;list-style: none;}
 		html{font-size: 100px;}
@@ -10,7 +11,7 @@
 	</style>
 	<script type="text/javascript">
 		$(function(){
-			getMap('望京SOHO','双安商场',39.98871,116.43234,39.89778,116.709684);
+			getMap('望京SOHO','双安商场',116.43234,39.98871,116.709684,39.89778);
 			function getMap(origin,destination,originLat,originLon,destinationLat,destinationLon,){
 				$('#map_baidu').attr('href','http://api.map.baidu.com/direction?origin='+originLon+','+originLat+'&destination='+destinationLon+','+destinationLat+'&mode=driving&origin_region='+origin+'&destination_region='+destination+'&output=html');
 				$('#map_gaode').attr('href','http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1');
