@@ -36,23 +36,23 @@
 				if(isIos){
 					
 					$('#map_baidu').click(function(){
-						window.location.href = 'baidumap://map/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&src=ios.baidu.openAPIdemo'
+						window.location.href = 'baidumap://map/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&src=ios.baidu.openAPIdemo&coord_type=wgs84'
 						setTimeout(function(){
-							window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo'
+							window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo&coord_type=wgs84'
 						},2000)
 					})
 
 
 					$('#map_gaode').click(function(){
-						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1'
+						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
 					})
 				}else if(isAndroid){
 
 					$('#map_baidu').click(function(){
-						window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&region=西安&output=html'
+						window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&region=西安&output=html&coord_type=wgs84'
 					})
 					$('#map_gaode').click(function(){
-						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1'
+						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
 					})
 				}else{
 					alert('出错了，请重新加载')
@@ -106,7 +106,7 @@
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
 116.43234&destination=西直门&coord_type=bd09ll&mode=driving&src=andr.baidu.openAPIdemo" id="map_baidu">百度地图</a> -->
 	<a href="javascript:;" id="map_gaode">高德地图11</a>
-	<a href="javascript:;" id="map_baidu">百度地图1</a>
+	<a href="javascript:;" id="map_baidu">百度地图11</a>
 	<!-- <a href="javascript:;" id="map_baidu2">百度地图2</a> -->
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
 116.43234&destination=西直门&coord_type=bd09ll&mode=driving&src=andr.baidu.openAPIdemo">驾车路线规划</a>
