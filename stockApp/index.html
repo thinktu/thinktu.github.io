@@ -23,7 +23,7 @@
 				$('#map_gaode').attr('href','http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1');
 				}else if(isAndroid){
 					
-					$('#map_baidu').attr('href','http://api.map.baidu.com/direction?origin=name:'+origin+'|latlng:'+originLon+','+originLat+'&destination=name:'+destination+'|latlng:'+destinationLon+','+destinationLat+'&mode=driving&output=html&src=webapp.baidu.openAPIdemo');
+					$('#map_baidu').attr('href','http://api.map.baidu.com/direction?origin='+originLon+','+originLat+'&destination=name:'+destination+'|latlng:'+destinationLon+','+destinationLat+'&mode=driving&output=html&src=webapp.baidu.openAPIdemo');
 				$('#map_gaode').attr('href','http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1');
 				}else{
 					alert('出错了，请重新加载')
