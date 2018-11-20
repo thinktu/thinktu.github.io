@@ -11,7 +11,7 @@
 	</style>
 	<script type="text/javascript">
 		$(function(){
-			getMap('望京SOHO','双安商场',116.43234,39.98871,116.709684,39.89778);
+			getMap('双安商场','望京SOHO',116.43234,39.98871,116.709684,39.89778);
 			function getMap(origin,destination,originLat,originLon,destinationLat,destinationLon,){
 				$('#map_baidu').attr('href','http://api.map.baidu.com/direction?origin=name:'+origin+'|latlng:'+originLon+','+originLat+'&destination=name:'+destination+'|latlng:'+destinationLon+','+destinationLat+'&mode=driving&output=html');
 				$('#map_gaode').attr('href','http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=gaode&callnative=1');
@@ -58,8 +58,8 @@
 <body>
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
 116.43234&destination=西直门&coord_type=bd09ll&mode=driving&src=andr.baidu.openAPIdemo" id="map_baidu">百度地图</a> -->
-	<a href="javascript:;" id="map_gaode">高德地图1</a>
-	<a href="javascript:;" id="map_baidu">百度地图1</a>
+	<a href="javascript:;" id="map_gaode">高德地图11</a>
+	<a href="javascript:;" id="map_baidu">百度地图11</a>
 	<!-- <a href="javascript:;" id="map_baidu2">百度地图2</a> -->
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
 116.43234&destination=西直门&coord_type=bd09ll&mode=driving&src=andr.baidu.openAPIdemo">驾车路线规划</a>
