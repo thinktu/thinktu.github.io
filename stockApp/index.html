@@ -18,10 +18,12 @@
 			// alert(typeApp)
 			if(isIos){
 				$('#map_baidu').on('click',function(){
-					window.location.href = "baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=ios.baidu.openAPIdemo"
+					$(this).attr('href','baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=ios.baidu.openAPIdemo')
+					// window.location.href = "baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=ios.baidu.openAPIdemo"
 				})
 				$('#map_gaode').on('click',function(){
-					window.location.href = "http://uri.amap.com/navigation?from=116.478346,39.997361,startpoint&to=116.3246,39.966577,endpoint&via=116.402796,39.936915,midwaypoint&mode=car&policy=1&src=mypage&coordinate=gaode&callnative=1"
+					$(this).attr('href','http://uri.amap.com/navigation?from=116.478346,39.997361,startpoint&to=116.3246,39.966577,endpoint&via=116.402796,39.936915,midwaypoint&mode=car&policy=1&src=mypage&coordinate=gaode&callnative=1')
+					// window.location.href = "http://uri.amap.com/navigation?from=116.478346,39.997361,startpoint&to=116.3246,39.966577,endpoint&via=116.402796,39.936915,midwaypoint&mode=car&policy=1&src=mypage&coordinate=gaode&callnative=1"
 				})
 			}else if(isAndroid){
 
