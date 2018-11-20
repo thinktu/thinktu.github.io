@@ -36,9 +36,9 @@
 				if(isIos){
 					
 					$('#map_baidu').click(function(){
-						window.location.href = 'baidumap://map/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&src=ios.baidu.openAPIdemo&coord_type=wgs84'
+						window.location.href = 'baidumap://map/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&src=ios.baidu.openAPIdemo&coord_type=wgs84'
 						setTimeout(function(){
-							window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo&coord_type=wgs84'
+							window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo&coord_type=wgs84'
 						},2000)
 					})
 
@@ -50,7 +50,7 @@
 					alert(1)
 
 					$('#map_baidu').click(function(){
-						window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+originLon+','+originLat+'|name:'+origin+'&destination='+destination+'&mode=driving&region=西安&output=html&coord_type=wgs84'
+						window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&region=西安&output=html&coord_type=wgs84'
 					})
 					$('#map_gaode').click(function(){
 						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
