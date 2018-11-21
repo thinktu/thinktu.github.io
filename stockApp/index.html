@@ -36,7 +36,7 @@
 				if(isIos){
 					
 					$('#map_baidu').click(function(){
-						window.location.href = 'bdapp://map/direction?region=beijing&origin=39.98871,116.43234&destination=西直门&mode=driving&src=andr.baidu.openAPIdemo'
+						window.location.href = 'baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&coord_type=bd09ll&mode=driving&src=ios.baidu.openAPIdemo'
 						setTimeout(function(){
 							window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo&coord_type=wgs84'
 						},2000)
@@ -134,7 +134,7 @@
 <body>
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
 116.43234&destination=西直门&coord_type=bd09ll&mode=driving&src=andr.baidu.openAPIdemo" id="map_baidu">百度地图</a> -->
-	<a href="javascript:;" id="map_gaode">高德地图</a>
+	<a href="javascript:;" id="map_gaode">高德地图1</a>
 	<a href="javascript:;" id="map_baidu">百度地图11</a>
 	<!-- <a href="javascript:;" id="map_baidu2">百度地图2</a> -->
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
