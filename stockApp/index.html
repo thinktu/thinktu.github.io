@@ -36,7 +36,7 @@
 				if(isIos){
 					
 					$('#map_baidu').click(function(){
-						window.location.href = 'baidumap://map/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&src=ios.baidu.openAPIdemo&coord_type=wgs84'
+						window.location.href = 'bdapp://map/direction?region=beijing&origin=39.98871,116.43234&destination=西直门&mode=driving&src=andr.baidu.openAPIdemo'
 						setTimeout(function(){
 							window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo&coord_type=wgs84'
 						},2000)
@@ -47,10 +47,9 @@
 						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
 					})
 				}else if(isAndroid){
-					alert(1)
 
 					$('#map_baidu').click(function(){
-						window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&region=西安&output=html&coord_type=wgs84'
+						window.location.href = 'bdapp://map/direction?region=beijing&origin=39.98871,116.43234&destination=西直门&mode=driving&src=andr.baidu.openAPIdemo'
 					})
 					$('#map_gaode').click(function(){
 						window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
@@ -58,6 +57,35 @@
 				}else{
 					alert('出错了，请重新加载')
 				}
+
+
+				// var typeApp = navigator.userAgent;
+				// var isAndroid = /android/i.test(typeApp);
+				// var isIos = /ipad|iphone/i.test(typeApp);
+				// if(isIos){
+					
+				// 	$('#map_baidu').click(function(){
+				// 		window.location.href = 'baidumap://map/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&src=ios.baidu.openAPIdemo&coord_type=wgs84'
+				// 		setTimeout(function(){
+				// 			window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&region=西安&output=html&src=ios.baidu.openAPIdemo&coord_type=wgs84'
+				// 		},2000)
+				// 	})
+
+
+				// 	$('#map_gaode').click(function(){
+				// 		window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
+				// 	})
+				// }else if(isAndroid){
+
+				// 	$('#map_baidu').click(function(){
+				// 		window.location.href = 'http://api.map.baidu.com/direction?origin=latlng:'+destinationLon+','+destinationLat+'|name:'+origin+'&destination=latlng:'+originLon+','+originLat+'|name:'+origin+'&mode=driving&output=html&coord_type=wgs84'
+				// 	})
+				// 	$('#map_gaode').click(function(){
+				// 		window.location.href = 'http://uri.amap.com/navigation?from='+originLat+','+originLon+','+origin+'&to='+destinationLat+','+destinationLon+','+destination+'&mode=car&policy=0&src=mypage&coordinate=wgs84&callnative=1'
+				// 	})
+				// }else{
+				// 	alert('出错了，请重新加载')
+				// }
 			}
 
 
@@ -106,7 +134,7 @@
 <body>
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
 116.43234&destination=西直门&coord_type=bd09ll&mode=driving&src=andr.baidu.openAPIdemo" id="map_baidu">百度地图</a> -->
-	<a href="javascript:;" id="map_gaode">高德地图111</a>
+	<a href="javascript:;" id="map_gaode">高德地图</a>
 	<a href="javascript:;" id="map_baidu">百度地图11</a>
 	<!-- <a href="javascript:;" id="map_baidu2">百度地图2</a> -->
 	<!-- <a href="bdapp://map/direction?region=beijing&origin=39.98871,
